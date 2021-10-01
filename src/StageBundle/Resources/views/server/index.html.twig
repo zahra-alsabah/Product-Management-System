@@ -1,0 +1,68 @@
+{% extends "layout.html.twig" %}
+{% block head %}
+    <title> {% block title %}{{ parent () }}-Forum{% endblock %}</title>
+{% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" herf="{{ asset('css/style1good.css') }}" />
+
+    {% endblock %}
+
+
+
+     {% block content %}
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+
+    <h1>Servers list</h1>
+                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Url</th>
+                <th>username</th>
+                <th>Mdp</th>
+                <th>Port</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for server in servers %}
+            <tr>
+                <td><a href="{{ path('*_show', { 'id': server.id }) }}">{{ server.id }}</a></td>
+                <td>{{ server.Url }}</td>
+                <td>{{ server.username }}</td>
+                <td>{{ server.mdp }}</td>
+                <td>{{ server.port }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('*_show', { 'id': server.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('*_edit', { 'id': server.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('*_new') }}">Create a new server</a>
+        </li>
+    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+     {% endblock %}
+

@@ -1,0 +1,235 @@
+{% extends "layout.html.twig" %}
+{% block head %}
+    <title> {% block title %}{{ parent () }}-Forum{% endblock %}</title>
+{% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" herf="{{ asset('css/style1good.css') }}" />
+        <link rel="stylesheet" herf="{{ asset('templates/css/page.css') }}" />
+
+    {% endblock %}
+
+
+
+     {% block content %}
+         <style>
+             input[type=text] {
+                 width: 130px;
+                 box-sizing: border-box;
+                 border: 2px solid #ccc;
+                 border-radius: 4px;
+                 font-size: 16px;
+                 background-color: white;
+                 background-position: 10px 10px;
+                 background-repeat: no-repeat;
+                 padding: 12px 20px 12px 40px;
+                 transition: width 0.4s ease-in-out;
+             }
+
+             input[type=text]:focus {
+                 width: 100%;
+             }
+         </style>
+
+
+         <form action="{{path('testSearchPost',{ 'id':indexe.id,'page':1 } )}}" method="POST">
+             <input type="text" name="search" placeholder="typing..">
+             <button class="btn" type="submit"></button>
+         </form>
+
+
+         <div class="content">
+             <div class="animated fadeIn">
+                 <div class="row">
+
+
+                     <div class="col-md-12">
+                         <div class="card">
+                             <h1>product's list</h1>
+
+
+                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
+
+                                 <thead>
+                                 <tr>
+
+
+                                     <th>title</th>
+                                     <th>titleL</th>
+                                     <th>prix</th>
+                                     <th>fprix</th>
+                                     <th>titleN</th>
+                                     <th>poids</th>
+                                     <th>bio</th>
+                                     <th>category_name</th>
+                                     <th>firstIngL</th>
+                                     <th>ingrédients</th>
+                                     <th>provider</th>
+                                     <th>product_id</th>
+                                     <th>ingredients</th>
+                                     <th>nbIngs</th>
+                                     <th>unitnorm</th>
+                                     <th>fpoids</th>
+                                     <th>image</th>
+                                     <th>qte</th>
+                                     <th>titlePondere</th>
+                                     <th>firstIng</th>
+                                     <th>devise</th>
+                                     <th>url</th>
+                                     <th>marque</th>
+                                     <th>prixUnite</th>
+                                     <th>qualité</th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+                                 {% for prdt in produits %}
+                                     <tr>
+
+                                         <td> {% if prdt._source.title is defined %}
+                                                 {{prdt._source.title}}
+                                             {% endif %}</td>
+
+                                         <td> {% if prdt._source.titleL is defined %}
+                                                 {{ prdt._source.titleL }}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.prix is defined %}
+                                                 {{ prdt._source.prix }}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.fprix is defined %}
+                                                 {{ prdt._source.fprix }}
+                                             {% endif %}</td>
+
+                                         <td> {% if prdt._source.titleN is defined %}
+                                                 {{ prdt._source.titleN}}
+                                             {% endif %}</td>
+
+                                         <td> {% if prdt._source.poids is defined %}
+                                                 {{prdt._source.poids}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.bio is defined %}
+                                                 {{prdt._source.bio}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.category_name is defined %}
+                                                 {{ prdt._source.category_name }}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.firstIngL is defined %}
+                                                 {prdt._source.firstIngL}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.ingredients is defined %}
+                                                 {{ prdt._source.ingredients}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.provider is defined %}
+                                                 {{prdt._source.provider}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.product_id is defined %}
+                                                 {{prdt._source.product_id}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.ingredients is defined %}
+                                                 {{prdt._source.ingredients}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.nbIngs is defined %}
+                                                 {{prdt._source.ingredients}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.unitnorm is defined %}
+                                                 {{prdt._source.unitnorm}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.fpoids is defined %}
+                                                 {{prdt._source.fpoids}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.image is defined %}
+                                                 {{prdt._source.image}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.qte is defined %}
+                                                 {{prdt._source.qte}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.titlePondere is defined %}
+                                                 {{prdt._source.titlePondere}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.firstIng is defined %}
+                                                 {{prdt._source.firstIng}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.devise is defined %}
+                                                 {{prdt._source.devise}}
+                                             {% endif %}</td>
+
+                                         <td>{% if prdt._source.url is defined %}
+                                                 {{prdt._source.url}}
+                                             {% endif %}</td>
+
+
+
+
+
+                                     </tr>
+                                 {% endfor %}
+                                 </tbody>
+                             </table>
+
+                             <ul>
+                                 <li>
+                                     <a href="{{ path('regle_new') }}">Create a new regle</a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <style>
+                 .center {
+                     text-align: center;
+                 }
+
+                 .pagination {
+                     display: inline-block;
+                 }
+
+                 .pagination a {
+                     color: black;
+                     float: left;
+                     padding: 8px 16px;
+                     text-decoration: none;
+                     transition: background-color .3s;
+                     border: 1px solid #ddd;
+                     margin: 0 4px;
+                 }
+
+                 .pagination a.active {
+                     background-color: #4CAF50;
+                     color: white;
+                     border: 1px solid #4CAF50;
+                 }
+
+                 .pagination a:hover:not(.active) {background-color: #ddd;}
+             </style>
+             <div class="pagination" >
+                 <a href="#">❮</a>
+
+                 {% for i in 1..page+3 %}
+                     {% if i == page %}
+                         <a href="{{path('testSearch',{ 'id':indexe.id,'page':i,'word':word } )}}">{{ i }}</a>
+                     {% else %}
+                         <a href="{{path('testSearch',{ 'id':indexe.id,'page':i,'word':word } )}}" class="active">{{ i }}
+                         </a>
+                     {% endif %}
+                 {% endfor %}
+                 <a href="#">❯</a>
+             </div>
+         </div>
+
+     {% endblock %}

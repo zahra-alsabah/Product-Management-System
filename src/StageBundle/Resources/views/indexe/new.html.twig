@@ -1,0 +1,49 @@
+
+{%  extends "layout.html.twig" %}
+{% block head %}
+    <title> {% block title %}{{ parent () }}-Forum{% endblock %}</title>
+{% endblock %}
+    {% block stylesheet %}
+        <link rel="stylesheet" herf="{{ asset('css/style1good.css') }}" />
+
+    {% endblock %}
+
+
+
+    {% block content %}
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                            </div>
+                            <div class="card-body">
+{% block body %}
+    <h1>Index creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('indexe_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+ </div>
+ </div>
+ </div>
+
+
+ </div>
+ </div><!-- .animated -->
+ </div><!-- .content -->
+
+
+ {% endblock%}

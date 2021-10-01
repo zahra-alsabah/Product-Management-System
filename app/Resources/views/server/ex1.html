@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <fieldset>
+        <legend>Vos Coordonnees</legend>
+        <table>
+            <tr>
+                <td>
+                    Nom
+                </td>
+                <td>
+                    <input type="text" name="nom" value="<?php if(isset($_POST['nom'])) echo $_POST['nom'];?>"/>    
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="text" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>"/>    
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Telephone
+                </td>
+                <td>
+                    <input type="text" name="tel" value="<?php if(isset($_POST['tel'])) echo $_POST['tel'];?>"/>    
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Code
+                </td>
+                <td>
+                    <input type="password" name="password" value="<?php if(isset($_POST['password'])) echo $_POST['password'];?>"/>    
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Departement
+                </td>
+                <td>
+                    <input type="number" name="dep" value="<?php if(isset($_POST['dep'])) echo $_POST['dep'];?>"/>    
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Nee le
+                </td>
+                <td>
+                    <input type="date" name="date" value="<?php if(isset($_POST['date'])) echo $_POST['date'];?>"/>                       
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="radio" name="genre" value="Homme"/> 
+                </td>
+                <td>
+                    Homme
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="radio" name="genre" value="=Femme"/>
+                </td>
+                <td>
+                    Femme
+                </td>
+            </tr>
+
+
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Programme utilisé</legend>
+
+
+    </fieldset>
+    <fieldset>
+        <legend>envoyer une photo</legend>
+
+
+    </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+stage_homepage:
+    path:     /
+    defaults: { _controller: StageBundle:Default:index }
+
+test:
+    path:      /test/{id}/{page}
+    defaults: { _controller: StageBundle:Default:testAPi }
+testSearch:
+    path:      /testSearch/{id}/{page}/{word}
+    defaults: { _controller: StageBundle:Default:testAPiSearch}
+testSearchPost:
+    path:      /testSearchPost/{id}/{page}
+    defaults: { _controller: StageBundle:Default:searchPoset}
+
+ 
+    path:      /errone/{id}/{page}
+    defaults: { _controller: StageBundle:Default:Regles}
+
+Stage_affichage:
+
+    path:      /affichage
+    defaults: { _controller: StageBundle:User:affichage }
+
+Stage_ajoutUser :
+    path :  /ajoutUser
+    defaults: { _controller: StageBundle:User:ajoutUser }
+
+Stage_afficheUser :
+    path :  /afficheUser
+    defaults: { _controller: StageBundle:User:afficheUser }
+
+Stage_SupprimerUser:
+    path:     /SupprimerUser/{id}
+    defaults: { _controller: StageBundle:User:SupprimerUser }
+
+indexe_new:
+    path:  /indexe/new
+    defaults: { _controller: StageBundle:indexe:new }
+
+indexe_index:
+    path:  /indexe/index
+    defaults: { _controller: StageBundle:indexe:index }
+
+indexe_edit:
+    path:  /indexe/{id}/edit
+    defaults: { _controller: StageBundle:indexe:edit }
+
+indexe_show:
+    path:    /indexe/{id}
+    defaults: { _controller: StageBundle:indexe:show }
+
+indexe_delete:
+    path:     /deleteindexe/{id}
+    defaults: { _controller: StageBundle:indexe:deleteIndexe }
+
+afficher_Produit:
+    path:     /AfficheProduct
+    defaults: { _controller: StageBundle:Product:index }
+
+server_new:
+    path:  /server/new
+    defaults: { _controller: StageBundle:Server:new }
+
+server_index:
+    path:  /server/index
+    defaults: { _controller: StageBundle:Server:index }
+
+server_edit:
+    path:  /server/{id}/edit
+    defaults: { _controller: StageBundle:Server:edit }
+
+server_show:
+    path:    /server/{id}
+    defaults: { _controller: StageBundle:indexe:show }
+
+regle_new:
+    path:  /regle/new
+    defaults: { _controller: StageBundle:regle:new }
+
+regle_index:
+    path:  /regle/index
+    defaults: { _controller: StageBundle:regle:index }
+
+regle_show:
+    path:    /regle/{id}
+    defaults: { _controller: StageBundle:regle:show }
+regle_delete:
+    path:     /deleteregle/{id}
+    defaults: { _controller: StageBundle:regle:deleteregle }
+

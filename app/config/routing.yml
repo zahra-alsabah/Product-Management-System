@@ -1,0 +1,31 @@
+stage_regle:
+    resource: "@StageBundle/Controller/regleController.php"
+    type:     annotation
+
+stage_regle:
+    resource: "@StageBundle/Controller/RegleController.php"
+    type:     annotation
+
+stage_product:
+    resource: "@StageBundle/Controller/ProductController.php"
+    type:     annotation
+
+stage_regle:
+    resource: "@StageBundle/Controller/RegleController.php"
+    type:     annotation
+
+stage_indexe:
+    resource: "@StageBundle/Controller/indexeController.php"
+    type:     annotation
+
+stage_server:
+    resource: "@StageBundle/Controller/ServerController.php"
+    type:     annotation
+
+stage:
+    resource: "@StageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
